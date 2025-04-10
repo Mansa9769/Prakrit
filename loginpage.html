@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        .container{
+            font-family: 'Georgia';
+            
+        }
+    </style>
+    <script src="auth.js"></script>
+</head>
+<body>
+    <div class="container">
+    <h1 align="center">Log in</h1>
+   <br><form action="login.php" method="post" name="loginform" onsubmit="return validate();">
+      <center> <div><i class="fa-solid fa-user username" style="color: #000000;"></i> <input type="text" placeholder="Username"  name="username"><br>
+       <br> <i class="fa-solid fa-lock password"></i><input type="password" placeholder="Password" name="password"><br>
+        <br><button type="submit">Login</button><BR>
+            <p>OR</p>
+        <i class="fa-brands fa-google"></i>   <i class="fa-brands fa-facebook"></i>
+        <br><br><p>Don't have an account?<a href="register.html">Signup here</a></p></div></center>
+    </form>
+</div>
+</body>
+</html>

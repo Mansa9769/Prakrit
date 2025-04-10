@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="jquery-3.7.1.js"></script>
+
+  <style>
+
+    .profile-wrapper {
+      display: flex;
+      gap: 40px;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(81, 46, 29, 0.2);
+      max-width: 1000px;
+      width: 100%;
+      background-color: #dfbc98;
+    }
+
+    .left-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1px solid #dfbc98;
+      padding-right: 30px;
+    }
+
+    .left-panel .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #9b714e;
+      margin-bottom: 15px;
+    }
+
+    .left-panel .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .left-panel button {
+      background-color: #774c2e;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .left-panel button:hover {
+      background-color: #512e1d;
+    }
+
+    .right-panel {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h2 {
+      font-size: 24px;
+      color: #512e1d;
+    }
+
+    .logout-btn {
+      background-color: #9b714e;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #7e5b44;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      color: #52462d;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 10px 14px;
+      border: 1px solid #dfbc98;
+      border-radius: 8px;
+      background-color: #f9f5f2;
+      font-size: 14px;
+      transition: border-color 0.3s;
+      color: #512e1d;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #9b714e;
+    }
+
+    .form-group input[readonly] {
+      background-color: #e9d3b2;
+      cursor: not-allowed;
+    }
+
+    .form-group .action-btn {
+      margin-top: 8px;
+      background-color: #7e5b44;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      width: fit-content;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-group .action-btn:hover {
+      background-color: #512e1d;
+    }
+
+
+    * {
+            margin: 0;
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        body {
+        
+            font-family: "Georgia";
+
+            background: linear-gradient(135deg, #f4f4f9, #e0c3a1);
+            color: #333;
+            overflow-x: hidden;
+        }
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #3e2217, #8a5a3c); 
+    padding: 18px 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+nav img {
+    width: 85px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav img:hover {
+    transform: scale(1.08);
+}
+
+
+nav .searchbar {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    width: 500px;
+}
+
+nav .searchbar input {
+    width: 100%;
+    height: 42px;
+    padding: 0 45px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav .searchbar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+nav .searchbar i {
+    position: absolute;
+    left: 0px;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+nav .searchbar i:hover {
+    transform: scale(1.15);
+}
+
+
+nav span {
+    display: flex;
+    align-items: center;
+}
+
+nav a ,.user{
+    color: #ffefe0;
+  
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    color: #ffefe0;
+   
+}.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #ffefe0;
+    
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff9f3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 10px;
+    top: 100%;
+    left: 0;
+    
+}
+
+.dropdown-content a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #5a3e1b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #fceee1;
+    color:brown;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+
+footer {
+            background: linear-gradient(135deg, #774c2e, #5a3e1b);
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-logo img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+       
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 100;
+        }
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-social a {
+            font-size: 24px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .footer-social a:hover {
+            transform: scale(1.2);
+        }
+
+.footer-copyright p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <img src="logo.png" alt="kkrloser">
+
+    <form class="searchbar" method="get" action="search.php">
+        <input type="text" name="q" placeholder="Search books" required>
+        <button type="submit" style="background:none;border:none;position:absolute;left:15px;top:10px;">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+    
+
+    <span>
+        <a href="Home_new.html" target="content">Home</a>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Categorize</a>
+            <div class="dropdown-content">
+              <a href="filter.php?type=genre">By Genre</a>
+              <a href="filter.php?type=language">By Language</a>
+            </div>
+          </div>
+        <a href="favorites.php" target="content">Favourites</a>
+        <a href="UserProfile.html" target="content"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
+
+       
+        </span>
+  </nav>
+
+<center>
+  <div class="profile-wrapper" style="margin-top: 30px;">
+  
+    <div class="left-panel">
+      <div class="profile-pic">
+        <img src="Person1.jpg" alt="Profile Picture" />
+      </div>
+      <button>Upload Picture</button>
+   <br><br><br>
+     <div style="background-color: whitesmoke; padding: 13px; border-radius: 5%; height: 160px;"> <b><p>Bio</p></b><hr><br> <em><p style="text-align: justify;">"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid tempora libero nemo delectus incidunt voluptate!"</p> </em></div>
+    </div>
+
+   
+    <div class="right-panel">
+      <div class="header">
+        <h2 style="font-size: 25px;">User Profile</h2>
+       <a href="loginpage.html"> <button class="logout-btn">Logout</button></a>
+      </div>
+
+      <div class="form-group">
+        <label for="username" style="text-align: left; font-size: 16px;"><b>Username</b></label>
+        <input type="text" id="username" value=""/>
+        <button class="action-btn">Edit Username</button>
+      </div>
+
+      <div class="form-group">
+        <label for="password" style="text-align: left; font-size: 16px;"><b>Password</b></label>
+        <input type="password" id="password" value=""/>
+        <button class="action-btn">Change Password</button>
+      </div>
+
+      <div class="form-group">
+        <label for="signup-date" style="text-align: left; font-size: 16px;"><b>Date of Sign Up</b></label>
+        <input type="text" id="signup-date" value=""/>
+      </div>
+
+      <div class="form-group">
+        <label for="language" style="text-align: left; font-size: 16px;"><b>Language Preference</b></label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+        </select>
+        <button class="action-btn">Save Language</button>
+      </div>
+    </div>
+  </div>
+</center>
+<footer>
+  <div class="footer-container">
+      <div class="footer-logo">
+          <img src="logo.png" alt="kkrloser">
+      </div>
+      <div class="footer-links">
+          <a href="contact.html">Contact Us</a>
+          <a href="t&c.html">Terms and Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="about_us.html">About Us</a>
+          <a href="#">Help</a>
+      </div>
+      <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="footer-copyright">
+          <p>&copy; 2025 Book Suggestion Site. All rights reserved.</p>
+      </div>
+  </div>
+</footer>
+
+ 
+</body>
+</html>

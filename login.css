@@ -1,0 +1,169 @@
+
+.container {
+  height: 500px; 
+  width: 350px; 
+  margin-top: 150px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  background-color: white;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+
+.container1 {
+  height: 550px; 
+  width: 370px; 
+  margin-top: 150px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  background-color: white;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.3); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  background-image: url('login.jpg');
+  background-size: cover;
+}
+
+
+button {
+  height: 40px;
+  width: 100%; 
+  margin-top: 20px; 
+  border: none;
+  border-radius: 10px; 
+  color: white; 
+  font-size: 1rem; 
+  font-weight: bold; 
+  background: linear-gradient(135deg, #4b3621, #654321); 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+  cursor: pointer;
+  transition: all 0.3s ease; 
+}
+
+button:hover {
+  background: linear-gradient(135deg, #654321, #4b3621); 
+  transform: scale(1.05); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+}
+
+button:active {
+  transform: scale(0.95); 
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); 
+}
+
+::placeholder {
+  border: none;
+  color: black;
+  background-color: transparent;
+}
+
+.username {
+  margin-bottom: 10px;
+}
+
+.email {
+  margin-bottom: 10px; 
+}
+
+.password {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.container,
+.container1 {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"] { 
+  width: 90%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus { 
+  border-color: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.fa-user,
+.fa-lock,
+.fa-envelope { 
+  font-size: 1.5rem;
+
+  margin-bottom: 5px;
+}
+
+.fa-envelope{
+  margin-right:5px;
+}
+
+p {
+  margin-top: 15px;
+  color: #333;
+}
+
+a {
+  color: #4b3621; 
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+ 
+}
+
+a:hover {
+  color: #654321; 
+}
+
+
+.fa-google,
+.fa-facebook {
+  font-size: 1.5rem;
+  color: #4b3621; 
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fa-google:hover,
+.fa-facebook:hover {
+  color: #654321; 
+}

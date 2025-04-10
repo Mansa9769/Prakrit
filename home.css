@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+ 
+}
+
+.hero {
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1350px; 
+     width: 1423px;
+    
+    transform:scale()
+}

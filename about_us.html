@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us Prakrit</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="jquery-3.7.1.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Yatra+One&display=swap');
+
+
+    * {
+            margin: 0;
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        body {
+        
+            font-family: "Georgia";
+
+            background: linear-gradient(135deg, #f4f4f9, #e0c3a1);
+            color: #333;
+            overflow-x: hidden;
+        }
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #3e2217, #8a5a3c); 
+    padding: 18px 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+nav img {
+    width: 85px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav img:hover {
+    transform: scale(1.08);
+}
+
+
+nav .searchbar {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    width: 500px;
+}
+
+nav .searchbar input {
+    width: 100%;
+    height: 42px;
+    padding: 0 45px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav .searchbar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+nav .searchbar i {
+    position: absolute;
+    left: 0px;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+nav .searchbar i:hover {
+    transform: scale(1.15);
+}
+
+
+nav span {
+    display: flex;
+    align-items: center;
+}
+
+nav a ,.user{
+    color: #ffefe0;
+  
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    color: #ffefe0;
+   
+}
+
+    body {
+      font-family: 'Noto Serif', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf3;
+      color: #3e2f20;
+    }
+
+    header {
+      background-color: #a0522d;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      font-family: 'Yatra One', cursive;
+      font-size: 2.2rem;
+    }
+
+    .intro {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #5a3e2b;
+    }
+
+    .intro p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      text-align: justify;
+      color: #4a3b2d;
+    }
+
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+      background-color: #f9f3ec;
+    }
+
+    .member {
+      background-color: #fff;
+      border: 1px solid #deb887;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #d2a679;
+      margin-bottom: 15px;
+    }
+
+    .member h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: #5a3e2b;
+    }
+
+    .member a {
+      display: inline-block;
+      margin: 8px 0;
+      color: #8b4513;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .member a:hover {
+      text-decoration: underline;
+    }
+
+    .member p {
+      font-size: 0.95rem;
+      color: #3d2e23;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #a0522d;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+      body {
+      background: linear-gradient(135deg, #f4e6d2, #e0c9a6); 
+      font-family:'Georgia';
+      margin: 0;
+      padding: 0;
+      
+    
+      
+      background-size: cover;
+      background-position: center;
+    }
+
+
+  
+    .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #ffefe0;
+    
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff9f3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 10px;
+    top: 100%;
+    left: 0;
+    
+}
+
+.dropdown-content a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #5a3e1b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #fceee1;
+    color:brown;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+footer {
+            background: linear-gradient(135deg, #774c2e, #5a3e1b);
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-logo img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+       
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 100;
+        }
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-social a {
+            font-size: 24px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .footer-social a:hover {
+            transform: scale(1.2);
+        }
+
+.footer-copyright p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+
+  </style>
+
+  
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="kkrloser">
+
+        <form class="searchbar" method="get" action="search.php">
+            <input type="text" name="q" placeholder="Search books" required>
+            <button type="submit" style="background:none;border:none;position:absolute;left:15px;top:10px;">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        
+
+        <span>
+            <a href="Home_new.html" target="content">Home</a>
+    
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Categorize</a>
+                <div class="dropdown-content">
+                  <a href="filter.php?type=genre">By Genre</a>
+                  <a href="filter.php?type=language">By Language</a>
+                </div>
+              </div>
+            <a href="favorites.php" target="content">Favourites</a>
+            <a href="UserProfile.html" target="content"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
+
+           
+        </span>
+    </nav>
+
+
+   <section class="intro">
+
+  
+ 
+    <h2>About <span style="color: #8B4513;">Prakrit</span></h2>
+    <div class="intro-content">
+      <p>
+        <em style="color:#a0522d; font-weight: bold;">“Prakrit”</em> — meaning <em>natural</em>, <em>innate</em>, or <em>originating from the roots</em> — is more than just a platform. It is a heartfelt journey into the soul of India’s regional stories.
+      </p>
+  
+      <p>
+        We are here for the reader who still remembers their grandmother’s bedtime tales in Oriya… for the dreamer who finds solace in Punjabi poetry… for the seeker who wants to explore forgotten gems in Maithili, Assamese, or Konkani.
+      </p>
+  
+      <p>
+        In a digital world rushing toward uniformity, <strong style="color: #5A3E2B;">Prakrit</strong> gently reminds us of our vibrant linguistic diversity. Our mission is simple — to revive the emotional connect between people and their mother tongues, by curating timeless literature in the languages that shaped us.
+      </p>
+  
+      <p>
+        Whether you wish to relive your childhood through a folktale or discover a new dialect through verse — <strong style="color: #5A3E2B;">Prakrit</strong> opens a gateway to India’s cultural heartland.
+      </p>
+  
+      <p class="closing-quote">🕊️ <strong>Read. Remember. Reconnect.</strong></p>
+    </div>
+  </section> 
+
+
+</section> 
+
+   
+
+  
+  <section class="team-section">
+    <div class="member">
+      <img src="mansa.jpg" alt="Mansa Mohanty">
+      <h3>Mansa Mohanty</h3>
+      <a href="https://www.linkedin.com/in/mansa-mohanty-a5b998280/" target="_blank">LinkedIn</a>
+      <p>Mansa brings her deep love for Indian literature and linguistics to the platform. She leads the content curation across languages.</p>
+    </div>
+
+    <div class="member">
+      <img src="siddhi.jpeg" alt="Siddhi Kulkarni">
+      <h3>Siddhi Kulkarni</h3>
+      <a href="https://www.linkedin.com/in/siddhimun/" target="_blank">LinkedIn</a>
+      <p>Siddhi ensures the user interface feels as warm and comforting as reading a paperback under a tree. She designs with culture in mind.</p>
+    </div>
+
+    <div class="member">
+      <img src="nilay.jpeg" alt="Nilay Khare">
+      <h3>Nilay Khare</h3>
+      <a href="https://www.linkedin.com/in/nilaykhare/" target="_blank">LinkedIn</a>
+      <p>Nilay handles the backend magic that helps our recommendation engine work across dialects and platforms — efficiently and intelligently.</p>
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Our Story</h2>
+    <p>
+      At <strong>Prakrit</strong>, we believe that language is not just a tool — it's emotion, identity, and memory.
+      While the world races forward in global tongues, we pause — to preserve, celebrate, and share the beauty of Indian vernacular literature.
+      <br><br>
+      From age-old epics to contemporary voices, our mission is to bridge the digital divide for readers who long to reconnect with their roots.
+      Whether it's a poetic verse in Malayalam, a soulful Marathi novel, or a witty tale in Bhojpuri — <strong>Prakrit</strong> is your digital library of regional richness.
+      <br><br>
+      We are not just a book platform. We are a cultural movement. One story, one script, one language at a time.
+    </p>
+  </section>
+  
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="logo.png" alt="kkrloser">
+        </div>
+        <div class="footer-links">
+            <a href="contact.html">Contact Us</a>
+            <a href="t&c.html">Terms and Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="about_us.html">About Us</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 Book Suggestion Site. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+ 
+
+</body>
+</html>

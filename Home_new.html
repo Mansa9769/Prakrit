@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Suggestion Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="auth.js"></script>
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        body {
+         
+            font-family: "Georgia";
+
+            background: linear-gradient(135deg, #f4f4f9, #e0c3a1);
+            color: #333;
+            overflow-x: hidden;
+        }
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #3e2217, #8a5a3c); 
+    padding: 18px 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+nav img {
+    width: 85px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav img:hover {
+    transform: scale(1.08);
+}
+
+
+nav .searchbar {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    width: 500px;
+}
+
+nav .searchbar input {
+    width: 100%;
+    height: 42px;
+    padding: 0 45px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav .searchbar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+nav .searchbar i {
+    position: absolute;
+    left: 0px;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+nav .searchbar i:hover {
+    transform: scale(1.15);
+}
+
+
+nav span {
+    display: flex;
+    align-items: center;
+}
+
+nav a ,.user{
+    color: #ffefe0;
+  
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    color: #ffefe0;
+   
+}
+
+
+        h2 {
+            font-family: "Georgia";
+            font-size: 42px;
+            color: #5a3e1b;
+            margin-top: 40px;
+            text-align: center;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #774c2e;
+            border-radius: 2px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-item img {
+            width: 250px; 
+            height: 350px; 
+            object-fit: cover;
+            margin-right: 20px; 
+            transition: transform 0.3s ease;
+        }
+        .carousel-item img:last-child {
+            margin-right: 0; 
+        }
+        .carousel-item img:hover {
+            transform: scale(1.05);
+        }
+        .carousel-indicators button {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #704214;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        .carousel-indicators button.active {
+            transform: scale(1.5);
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(112, 66, 20, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: linear-gradient(135deg, #774c2e, #5a3e1b);
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-logo img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+       
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-social a {
+            font-size: 24px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .footer-social a:hover {
+            transform: scale(1.2);
+        }
+        .footer-copyright p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        /* Hero Section */
+        .hero {
+            height: 600px;
+            background: url('navbgfull.jpeg') no-repeat center/cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-content h1 {
+            
+            font-size: 60px;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .hero-content button {
+            background: #774c2e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right:10px;
+        }
+        .hero-content button:hover {
+            background: white;
+            color:black;
+            transform: scale(1.05);
+        }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #ffefe0;
+    
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff9f3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 10px;
+    top: 100%;
+    left: 0;
+    
+}
+
+.dropdown-content a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #5a3e1b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #fceee1;
+    color:brown;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+    </style>
+  
+</head>
+<body>
+    <nav>
+        <img src="logo.png" alt="kkrloser">
+
+        <form class="searchbar" method="get" action="search.php">
+            <input type="text" name="q" placeholder="Search books" required>
+            <button type="submit" style="background:none;border:none;position:absolute;left:15px;top:10px;">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        
+
+        <span>
+            <a href="Home_new.html" target="content">Home</a>
+    
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Categorize</a>
+                <div class="dropdown-content">
+                  <a href="filter.php?type=genre">By Genre</a>
+                  <a href="filter.php?type=language">By Language</a>
+                </div>
+              </div>
+            <a href="favorites.php" target="content">Favourites</a>
+            <a href="UserProfile.html" target="content"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
+
+           
+        </span>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+           
+            <h1>Welcome to Prakrit</h1>
+            <h4>Find your next favorite book and explore endless possibilities.</h4><br><br>
+            <a href="all_books.php">
+                <button>Explore Books</button>
+            </a>
+
+            <a href="authors.php">
+                <button>Discover Authors</button>
+            </a>
+            
+        </div>
+    </div>
+    <h2>TOP BOOKS</h2>
+    <center>
+        <div class="container">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <img src="mv1.jpg" alt="cat">
+                        <img src="mv2.jpg" alt="abc">
+                        <img src="mv3.jpg" alt="def">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="marathi 1.jpg" alt="cat">
+                        <img src="marathi 2.jpg" alt="abc">
+                        <img src="marathi 3.jpg" alt="def">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="godan.jpg" alt="cat">
+                        <img src="Devdas.jpg" alt="abc">
+                        <img src="marathi 6.jpg" alt="def">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </center>
+    <h2>MOST POPULAR</h2>
+    <center>
+        <div class="container">
+            <div id="demo1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo1" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo1" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo1" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <img src="mv1.jpg" alt="cat">
+                        <img src="mv2.jpg" alt="abc">
+                        <img src="mv3.jpg" alt="def">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="marathi 1.jpg" alt="cat">
+                        <img src="marathi 2.jpg" alt="abc">
+                        <img src="marathi 3.jpg" alt="def">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="godan.jpg" alt="cat">
+                        <img src="Devdas.jpg" alt="abc">
+                        <img src="marathi 6.jpg" alt="def">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </center>
+    <h2>WISHLIST</h2>
+    <center>
+        <div class="container">
+            <div id="demo2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo2" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo2" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo2" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <img src="mv1.jpg" alt="cat">
+                        <img src="mv2.jpg" alt="abc">
+                        <img src="mv3.jpg" alt="def">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="marathi 1.jpg" alt="cat">
+                        <img src="marathi 2.jpg" alt="abc">
+                        <img src="marathi 3.jpg" alt="def">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="godan.jpg" alt="cat">
+                        <img src="Devdas.jpg" alt="abc">
+                        <img src="marathi 6.jpg" alt="def">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </center>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="kkrloser">
+            </div>
+            <div class="footer-links">
+                <a href="contact.html">Contact Us</a>
+                <a href="t&c.html">Terms and Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="about_us.html">About Us</a>
+                <a href="#">Help</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Book Suggestion Site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+   
+</body>
+</html>

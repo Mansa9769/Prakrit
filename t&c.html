@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us Prakrut</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="jquery-3.7.1.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Yatra+One&display=swap');
+
+    * {
+            margin: 0;
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        body {
+            /* font-family: "Quintessential", cursive;
+            font-family: "Times New Roman"; */
+            font-family: "Georgia";
+
+            background: linear-gradient(135deg, #f4f4f9, #e0c3a1);
+            color: #333;
+            overflow-x: hidden;
+        }
+        nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #3e2217, #8a5a3c); /* Rich brown gradient */
+    padding: 18px 50px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* LOGO */
+nav img {
+    width: 85px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav img:hover {
+    transform: scale(1.08);
+}
+
+/* SEARCH BAR (Borderless, More Sleek) */
+nav .searchbar {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    width: 500px;
+}
+
+nav .searchbar input {
+    width: 100%;
+    height: 42px;
+    padding: 0 45px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav .searchbar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* SEARCH ICON */
+nav .searchbar i {
+    position: absolute;
+    left: 0px;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+nav .searchbar i:hover {
+    transform: scale(1.15);
+}
+
+
+nav span {
+    display: flex;
+    align-items: center;
+}
+
+nav a ,.user{
+    color: #ffefe0;
+  
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    color: #ffefe0;
+   
+}
+
+
+    body {
+      font-family: 'Noto Serif', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf3;
+      color: #3e2f20;
+    }
+
+    header {
+      background-color: #a0522d;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+      font-family: 'Yatra One', cursive;
+      font-size: 2.2rem;
+    }
+
+    .intro {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #5a3e2b;
+    }
+
+    .intro p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      text-align: justify;
+      color: #4a3b2d;
+    }
+
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+      background-color: #f9f3ec;
+    }
+
+    .member {
+      background-color: #fff;
+      border: 1px solid #deb887;
+      border-radius: 12px;
+      padding: 25px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #d2a679;
+      margin-bottom: 15px;
+    }
+
+    .member h3 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: #5a3e2b;
+    }
+
+    .member a {
+      display: inline-block;
+      margin: 8px 0;
+      color: #8b4513;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .member a:hover {
+      text-decoration: underline;
+    }
+
+    .member p {
+      font-size: 0.95rem;
+      color: #3d2e23;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #a0522d;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+      body {
+      background: linear-gradient(135deg, #f4e6d2, #e0c9a6); /* Warm parchment gradient */
+      font-family:'Georgia';
+      margin: 0;
+      padding: 0;
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    
+      
+      background-size: cover;
+      background-position: center;
+    }
+
+
+  
+       
+
+footer {
+            background: linear-gradient(135deg, #774c2e, #5a3e1b);
+            color: #fff;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-logo img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+       
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 100;
+        }
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        .footer-social a {
+            font-size: 24px;
+            color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .footer-social a:hover {
+            transform: scale(1.2);
+        }
+
+.footer-copyright p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #ffefe0;
+    
+    text-decoration: none;
+    margin: 0 18px;
+    padding: 14px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff9f3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    border-radius: 10px;
+    top: 100%;
+    left: 0;
+    
+}
+
+.dropdown-content a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: #5a3e1b;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #fceee1;
+    color:brown;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+
+
+
+
+  </style>
+
+  
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="kkrloser">
+
+        <form class="searchbar" method="get" action="search.php">
+            <input type="text" name="q" placeholder="Search books" required>
+            <button type="submit" style="background:none;border:none;position:absolute;left:15px;top:10px;">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        
+
+        <span>
+            <a href="Home_new.html" target="content">Home</a>
+    
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Categorize</a>
+                <div class="dropdown-content">
+                  <a href="filter.php?type=genre">By Genre</a>
+                  <a href="filter.php?type=language">By Language</a>
+                </div>
+              </div>
+            <a href="favorites.php" target="content">Favourites</a>
+            <a href="UserProfile.html" target="content"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
+
+           
+        </span>
+    </nav>
+<!-- 
+  <header>
+    📚 About Us - Prakrut
+  </header> -->
+
+  <!-- <section class="intro">
+    <h2>Who Are We?</h2>
+    <p>
+      In a world where digital content thrives in dominant global languages, many readers yearn for the comfort of their mother tongue. 
+      At <strong>Vernacular Reads</strong>, we aim to bring back the joy of native literature by curating and recommending books in regional languages. 
+      We believe in the beauty of every script and the stories rooted in local culture, dialects, and history. 
+      Whether you're looking for a Marathi classic, a Tamil short story collection, or a children's book in Bengali — we are your go-to platform.
+    </p>
+  </section> -->
+
+  <section style="background: linear-gradient(to right, #fdfaf6, #f6eee4); padding: 60px 20px; font-family: 'Merriweather', serif; color: #3a2e1e;">
+    <div style="max-width: 900px; margin: auto; background: #fffefb; padding: 40px 50px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-radius: 12px;">
+      
+      <h2 style="text-align: center; font-size: 36px; color: #8B4513; margin-bottom: 40px;">Terms & Conditions</h2>
+  
+      <h3 style="color: #5A3E2B; margin-top: 30px;">User Agreement</h3>
+      <p style="font-size: 17px; line-height: 1.7;">
+        By accessing and using Prakrut, you agree to abide by these Terms and Conditions. This includes all content, recommendations, and services available through our platform. Continued use of the website implies your acceptance of the most recent version of these terms.
+      </p>
+  
+      <h3 style="color: #5A3E2B; margin-top: 30px;">Use of the Website</h3>
+      <p style="font-size: 17px; line-height: 1.7;">
+        Our platform is designed to offer book recommendations and promote literature in Indian regional languages. Users are expected to explore and engage with the content respectfully. Misuse of any features, such as spamming or distributing misleading content, is strictly prohibited.
+      </p>
+  
+      <h3 style="color: #5A3E2B; margin-top: 30px;">Content Accuracy</h3>
+      <p style="font-size: 17px; line-height: 1.7;">
+        We strive to ensure that all information provided on Prakrut is accurate and relevant. However, we do not guarantee complete accuracy or currentness of all content. Users are encouraged to verify suggestions independently, especially where external links or third-party recommendations are involved.
+      </p>
+  
+      <h3 style="color: #5A3E2B; margin-top: 30px;">Intellectual Property</h3>
+      <p style="font-size: 17px; line-height: 1.7;">
+        All content available on this website, including the logo, design, text, and other visual elements, is the property of Prakrut unless otherwise stated. Unauthorized copying, distribution, or reproduction of our content is not permitted.
+      </p>
+  
+      <h3 style="color: #5A3E2B; margin-top: 30px;">Modifications to Terms</h3>
+      <p style="font-size: 17px; line-height: 1.7;">
+        We reserve the right to modify or update these Terms and Conditions at any time without prior notice. Users are advised to review this page regularly. Continued use of the website after any changes are made signifies acceptance of those changes.
+      </p>
+  
+      <h3 style="color: #5A3E2B; margin-top: 30px;">Third-Party Links</h3>
+      <p style="font-size: 17px; line-height: 1.7;">
+        Prakrut may feature links to third-party websites or services. These links are provided for user convenience. We do not control or endorse the content on those sites and are not responsible for any damages arising from their use.
+      </p>
+      
+      <h3 style="color: #5A3E2B; margin-top: 30px;">Privacy Policy</h3>
+<p style="font-size: 17px; line-height: 1.7;">
+  Your privacy is important to us. We do not sell or share your personal information with third parties, except where required by law or when necessary to provide services requested by you. By using Prakrut, you consent to the collection and limited use of your data in accordance with our Privacy Policy.
+</p>
+
+<h3 style="color: #5A3E2B; margin-top: 30px;">User-Generated Content</h3>
+<p style="font-size: 17px; line-height: 1.7;">
+  If you submit suggestions, reviews, or any form of content to Prakrut, you grant us a non-exclusive, royalty-free right to display and use that content on our platform. We reserve the right to remove or moderate content that violates our guidelines or is deemed inappropriate.
+</p>
+
+<h3 style="color: #5A3E2B; margin-top: 30px;">Limitation of Liability</h3>
+<p style="font-size: 17px; line-height: 1.7;">
+  Prakrut shall not be held liable for any direct, indirect, or incidental damages arising from your use or inability to use the website. All content and services are provided “as is” without any warranties or guarantees.
+</p>
+
+<h3 style="color: #5A3E2B; margin-top: 30px;">Account Security</h3>
+<p style="font-size: 17px; line-height: 1.7;">
+  If you create an account with us, it is your responsibility to maintain the confidentiality of your login credentials. You are solely responsible for all activities conducted under your account. Please notify us immediately in case of any unauthorized access or breach.
+</p>
+
+<h3 style="color: #5A3E2B; margin-top: 30px;">Governing Law</h3>
+<p style="font-size: 17px; line-height: 1.7;">
+  These Terms and Conditions are governed by the laws of India. Any disputes arising out of or in connection with the use of this website shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra.
+</p>
+
+<p style="font-size: 16px; text-align: center; margin-top: 50px; color: #777;">
+    Thank you for being a part of the Prakrut community 🌿
+  </p>
+
+    </div>
+  </section>
+  
+
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="logo.png" alt="kkrloser">
+        </div>
+        <div class="footer-links">
+            <a href="contact.html">Contact Us</a>
+            <a href="t&c.html">Terms and Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="about_us.html">About Us</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 Book Suggestion Site. All rights reserved.</p>
+        </div>
+    </div>
+  </footer>
+  
+ 
+
+</body>
+</html>
