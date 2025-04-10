@@ -3,6 +3,9 @@ FROM php:8.2-apache
 # Enable Apache rewrite module
 RUN a2enmod rewrite
 
+RUN docker-php-ext-install mysqli
+
+
 # Copy your PHP code into the container
 COPY . /var/www/html/
 
